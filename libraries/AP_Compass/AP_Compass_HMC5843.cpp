@@ -28,34 +28,9 @@
 #include <AP_HAL.h>
 
 #include "AP_Compass_HMC5843.h"
+#include "HMC5xx3.h"
 
 extern const AP_HAL::HAL& hal;
-
-#define COMPASS_ADDRESS      0x1E
-#define ConfigRegA           0x00
-#define ConfigRegB           0x01
-#define magGain              0x20
-#define PositiveBiasConfig   0x11
-#define NegativeBiasConfig   0x12
-#define NormalOperation      0x10
-#define ModeRegister         0x02
-#define ContinuousConversion 0x00
-#define SingleConversion     0x01
-
-// ConfigRegA valid sample averaging for 5883L
-#define SampleAveraging_1    0x00
-#define SampleAveraging_2    0x01
-#define SampleAveraging_4    0x02
-#define SampleAveraging_8    0x03
-
-// ConfigRegA valid data output rates for 5883L
-#define DataOutputRate_0_75HZ 0x00
-#define DataOutputRate_1_5HZ  0x01
-#define DataOutputRate_3HZ    0x02
-#define DataOutputRate_7_5HZ  0x03
-#define DataOutputRate_15HZ   0x04
-#define DataOutputRate_30HZ   0x05
-#define DataOutputRate_75HZ   0x06
 
 // read_register - read a register value
 bool AP_Compass_HMC5843::read_register(uint8_t address, uint8_t *value)

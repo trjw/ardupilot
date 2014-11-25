@@ -215,6 +215,8 @@ static AP_Compass_VRBRAIN compass;
 static AP_Compass_HMC5843 compass;
 #elif CONFIG_COMPASS == HAL_COMPASS_HIL
 static AP_Compass_HIL compass;
+#elif CONFIG_COMPASS == HAL_COMPASS_HMC5983_SPI
+static AP_Compass_HMC5983 compass;
 #else
  #error Unrecognized CONFIG_COMPASS setting
 #endif

@@ -43,6 +43,7 @@ LinuxSPIDeviceDriver LinuxSPIDeviceManager::_device[LINUX_SPI_DEVICE_NUM_DEVICES
     /* MPU9250 is restricted to 1MHz for non-data and interrupt registers */
     LinuxSPIDeviceDriver(0, 0, AP_HAL::SPIDevice_MPU9250, SPI_MODE_0, 8, SPI_CS_KERNEL,  1*MHZ, 16*MHZ),
     LinuxSPIDeviceDriver(0, 1, AP_HAL::SPIDevice_MS5611,  SPI_MODE_3, 8, SPI_CS_KERNEL,  10*MHZ,10*MHZ),
+    LinuxSPIDeviceDriver(0, 2, AP_HAL::SPIDevice_HMC5983,  SPI_MODE_3, 8, SPI_CS_KERNEL,  8*MHZ,8*MHZ),
 };
 #else
 // empty device table
